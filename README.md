@@ -14,6 +14,7 @@ Here is how the platform capabilities are translated into modular backend engine
 * **Video Ingestion & Chunked Input:** Handled via custom file pipelines and background meta-parsing to ensure smooth request cycles without blocking application threads.
 * **Unified CMS Framework (Articles & Community Posts):** Designed with indexed relational database structures supporting polymorphically linked user interactions, comments, and media attachments.
 * **User Profile Matrix:** A highly scalable schema managing unique creator identities, customized branding parameters, and operational metadata.
+* **Polymorphic Creator Activity Feed (New):** An asymmetric activity timeline tracking multi-media nodes, textual updates, and real-time engagement patterns. Integrated with access-control layers to dynamically filter content visibility between segmented audiences.
 
 #### 2. Native Ad Distribution & Analytics
 * **Programmatic Ad Campaign Engine:** Engine configured to dynamically route and serve optimized Direct Link and Vignette ad zone delivery pipelines, maximizing CPM throughput while preserving UI layout stability.
@@ -26,6 +27,7 @@ Here is how the platform capabilities are translated into modular backend engine
 #### 4. Digital Commerce & Ledger Matrix
 * **Digital Asset Marketplace:** Secure provisioning pipeline handling download authorization tokens, license key generation, and single-purchase logs for buying digital products.
 * **Double-Entry Financial Ledger (Deposit, Withdraw, Balance Transfer):** Built with strict database transaction atomicity (`DB::transaction`). Every financial movement—whether loading capital, requesting pay-outs, or initiating peer transfers—guarantees mathematical balance symmetry with automated rolling audit logs to eliminate race conditions.
+* **Dynamic Content Paywall Gate (New):** Enforces transaction thresholds to securely unlock premium premium posts. Utilizes server-side token verification blocks before streaming the gated payload to the client application.
 
 ---
 
