@@ -21,7 +21,7 @@ WORKDIR /var/www/html
 
 # Install production core extensions
 RUN apk add --no-cache unzip nginx supervisor libpng-dev libjpeg-turbo-dev freetype-dev \
-    && docker-php-ext-configure gnu --with-freetype --with-jpeg \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_mysql bcmath gd
 
 # Copy application layers
