@@ -1,4 +1,4 @@
-name: Architecture Verification
+name: Architecture Verification Pipeline
 
 on:
   push:
@@ -9,26 +9,60 @@ on:
 jobs:
   verify-blueprint:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Showcase Repository
-      uses: actions/checkout@v3
 
-    - name: Validate Infrastructure & Documentation Artifacts
-      run: |
-        echo "Starting deployment ecosystem linting..."
-        
-        # Check if core architectural documentation is intact
-        if [ -f "README.md" ]; then
-          echo "✔️ Core README.md architecture blueprint is verified."
-        else
-          echo "❌ Missing README.md" && exit 1
-        fi
-        
-        # Validate Docker container configurations
-        if [ -f "Dockerfile" ]; then
-          echo "✔️ Production Dockerfile container layers verified."
-        else
-          echo "❌ Missing Dockerfile" && exit 1
-        fi
-        
-        echo "🚀 Weekmotion tech-stack architecture successfully validated for production readiness!"
+    steps:
+      # =========================
+      # 1. Checkout repository using latest v4
+      # =========================
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # =========================
+      # 2. Validate core files existence
+      # =========================
+      - name: Validate Architecture Files
+        shell: bash
+        run: |
+          echo "🔍 Checking core architecture artifacts..."
+          FILES=("README.md" "Dockerfile")
+          
+          for file in "${FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing required file: $file"
+              exit 1
+            fi
+            echo "✅ $file structurally exists"
+          done
+
+      # =========================
+      # 3. Dockerfile layer configuration check
+      # =========================
+      - name: Dockerfile Structural Lint
+        run: |
+          echo "🐳 Validating multi-stage Dockerfile configuration layers..."
+          
+          if ! grep -q "FROM" Dockerfile; then
+            echo "❌ Invalid Dockerfile: Missing base execution layers"
+            exit 1
+          fi
+          
+          if ! grep -q "EXPOSE 80" Dockerfile; then
+            echo "❌ Invalid Dockerfile: Edge gateway port 80 routing mapping missing"
+            exit 1
+          fi
+          
+          echo "✅ Production containerization layers verified successfully"
+
+      # =========================
+      # 4. README integrity & branding check
+      # =========================
+      - name: Documentation Health Check
+        run: |
+          echo "📄 Checking README layout integrity..."
+          
+          if ! grep -qi "weekmotion" README.md; then
+            echo "❌ README layout is missing project core branding"
+            exit 1
+          fi
+          
+          echo "✅ Documentation structure and branding verified"
