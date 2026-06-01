@@ -1,1 +1,41 @@
+version: "3.8"
 
+services:
+  app:
+    build: .
+    container_name: weekmotion_app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+      - redis
+
+  nginx:
+    image: nginx:alpine
+    container_name: weekmotion_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8
+    container_name: weekmotion_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: weekmotion
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis:alpine
+    container_name: weekmotion_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
