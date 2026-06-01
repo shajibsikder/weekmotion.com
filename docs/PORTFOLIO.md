@@ -1,6 +1,6 @@
 # 🎬 Weekmotion
 
-**Web-focused Backend Engineer | Laravel | System Design | Scalable Web Applications**
+**Web-focused Backend Engineer | Laravel | System Design | Scalable Backend Architectures**
 
 ---
 
@@ -8,7 +8,7 @@
 
 Weekmotion is a modular monolithic video-sharing and content monetization platform designed for scalable media delivery, creator monetization, and secure financial transactions.
 
-The system focuses on **performance, maintainability, and data consistency under high traffic workloads**.
+The system is built to handle **high traffic workloads with consistent performance, data integrity, and maintainable architecture design**.
 
 ---
 
@@ -17,9 +17,15 @@ The system focuses on **performance, maintainability, and data consistency under
 - Modular Monolith Backend (Laravel)
 - Stateless REST API design
 - Redis-based asynchronous job processing
-- MySQL relational data consistency
-- Nginx reverse proxy architecture
+- MySQL relational consistency model
+- Nginx reverse proxy layer
 - Queue-driven background workers
+
+---
+
+## 🧠 System Flow (High Level)
+
+Client Request → Nginx → Laravel API → Redis Queue → Worker → MySQL → Response
 
 ---
 
@@ -36,14 +42,14 @@ The system focuses on **performance, maintainability, and data consistency under
 - Activity tracking system
 
 ### 💰 Monetization System
-- Creator eligibility rules engine
-- Watch-based reward system
+- Creator eligibility rule engine
+- Watch-based reward processing
 - Internal monetization routing logic
 
 ### 🏦 Financial System
-- Double-entry ledger system
-- Transaction-safe balance updates
-- Deposit / withdrawal / transfer support
+- Double-entry ledger architecture
+- Transaction-safe balance management
+- Deposit, withdrawal, and transfer workflows
 
 ### 📢 Advertisement System
 - Internal ad routing engine
@@ -53,34 +59,34 @@ The system focuses on **performance, maintainability, and data consistency under
 
 ## 🚀 Performance Design
 
-- Redis caching layer for high-speed reads
-- Async queue processing for heavy tasks
-- Database indexing optimization
-- Separation of request & background processing
+- Redis caching for high-speed read optimization
+- Asynchronous queue processing for heavy workloads
+- Database indexing for query efficiency
+- Separation of synchronous and background operations
 
 ---
 
 ## 🐳 Infrastructure
 
 - Docker-based containerized deployment
-- Nginx + PHP-FPM runtime
-- Supervisor-managed background workers
+- Nginx + PHP-FPM runtime environment
+- Supervisor-managed queue workers
 - GitHub Actions CI validation pipeline
 
 ---
 
 ## 📊 System Design Focus
 
-- Scalability-first backend design
-- Data consistency under concurrent load
-- Event-driven background processing
-- Clean separation of business logic layers
+- Scalability-first backend architecture
+- Strong data consistency under concurrency
+- Event-driven background processing model
+- Clean separation of domain responsibilities
 
 ---
 
 ## 📍 Status
 
-> Architecture showcase project — not a full open-source SaaS
+> Architecture showcase project (modular monolith, production-style infrastructure, not open-source SaaS)
 
 ---
 
