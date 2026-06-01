@@ -1,10 +1,13 @@
-# Stage 1: Build dependency optimization
-FROM composer:2.6 as vendor
+# =========================
+# Stage 1: Composer build
+# =========================
+FROM composer:2.6 AS vendor
 
 WORKDIR /app
+
+# Dependency files first (better cache)
+COPY composer.json composer.lock ./
 COPY database/ database/
-COPY composer.json composer.json
-COPY composer.lock composer.lock
 
 RUN composer install \
     --ignore-platform-reqs \
@@ -12,26 +15,55 @@ RUN composer install \
     --no-plugins \
     --no-scripts \
     --no-dev \
-    --prefer-dist
+    --prefer-dist \
+    --optimize-autoloader
 
-# Stage 2: Production runtime environment
+# =========================
+# Stage 2: Runtime
+# =========================
 FROM php:8.2-fpm-alpine
 
 WORKDIR /var/www/html
 
-# Install production core extensions
-RUN apk add --no-cache unzip nginx supervisor libpng-dev libjpeg-turbo-dev freetype-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo_mysql bcmath gd
+# System dependencies (minimal production-safe set)
+RUN apk add --no-cache \
+    nginx \
+    supervisor \
+    unzip \
+    zip \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    libzip-dev
 
-# Copy application layers
+# PHP extensions (Laravel core requirements)
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install \
+        pdo_mysql \
+        bcmath \
+        gd \
+        zip
+
+# Copy application (optimized layering)
 COPY . .
+
+# Copy vendor from build stage
 COPY --from=vendor /app/vendor/ vendor/
 
-# Production environment isolation configuration
+# Config files
 COPY ./docker/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 
+# Laravel required directories + secure permissions
+RUN mkdir -p storage bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
+
+# Ensure correct ownership for full app
+RUN chown -R www-data:www-data /var/www/html
+
+# Expose HTTP port
 EXPOSE 80
 
-CMD ["/usr/bin/supervisor", "-c", "/etc/supervisor/conf.d/supervisor.conf"]
+# Start supervisor (manages nginx + php-fpm + workers)
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisor.conf"]
