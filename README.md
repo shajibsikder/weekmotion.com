@@ -1,4 +1,4 @@
-# 🎬 Weekmotion: System Architecture & Design Overview
+## 🎬 Weekmotion: System Architecture & Design Overview
 
 This repository serves as the architectural documentation and system design blueprint for **Weekmotion**, a scalable video-sharing, content monetization, and creator ecosystem built using a decoupled monolithic architecture.
 
