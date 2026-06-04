@@ -74,6 +74,10 @@ A new intelligent feed layer has been added on top of the existing feed engine:
 
 This layer operates as a **frontend orchestration layer** over existing backend feed APIs.
 
+### Weekmotion Feed
+
+https://weekmotion.com/feed
+
 ---
 
 ## 🔓 User Unlock Library Extension (ENHANCED)
