@@ -115,6 +115,39 @@ No core database disruption has been introduced — only **layered feature expan
 
 ---
 
+## 🌐 Digital Services Platform
+
+Beyond the creator ecosystem, Weekmotion also operates a dedicated digital services platform designed for businesses, entrepreneurs, and organizations seeking modern digital solutions.
+
+### Service Capabilities
+
+- Custom Website Development
+- E-Commerce Solutions
+- SEO Optimization
+- Domain & Hosting Services
+- WhatsApp Marketing
+- Bulk SMS Solutions
+- Digital Advertising & Growth Services
+
+### Service Platform Enhancements
+
+- Modern conversion-focused landing page
+- SEO-optimized content architecture
+- Mobile-first responsive design
+- Improved lead generation workflow
+- Enhanced service presentation and user experience
+- Structured service information for better discoverability
+
+### Service Portal
+
+https://weekmotion.com/service
+
+### Objective
+
+The service platform expands Weekmotion into a complete digital ecosystem by combining content, community, and professional digital services under one unified platform.
+
+---
+
 ## 🏗️ System Data Flow
 
 This diagram represents the high-level request lifecycle, asynchronous processing flow, and storage segmentation layers.
