@@ -74,9 +74,11 @@ A new intelligent feed layer has been added on top of the existing feed engine:
 
 This layer operates as a **frontend orchestration layer** over existing backend feed APIs.
 
-### Weekmotion Feed
+### Feed Portal
 
 https://weekmotion.com/feed
+
+The Weekmotion Feed serves as the central discovery hub for community content, premium resources, educational materials, and user interactions.
 
 ---
 
@@ -88,6 +90,28 @@ https://weekmotion.com/feed
 - Library works as a **user-level access cache layer**
 
 This integrates with existing **content paywall & marketplace system**.
+
+## 📜 Content Governance & Trust Layer (NEW)
+
+Weekmotion includes a dedicated content governance framework designed to improve platform transparency, user trust, and content moderation workflows.
+
+### Features
+
+- Copyright & Content Policy Center
+- Content Report Center for community submissions
+- User-generated content disclosure notices
+- Copyright complaint and review workflow
+- Moderation and content governance tools
+- Premium content preview protection layer
+
+### Reporting & Compliance
+
+- Users can report content that may violate platform policies
+- Copyright owners can submit infringement complaints
+- Reported content may be reviewed, restricted, or removed
+- Repeat policy violations may result in account restrictions
+
+This layer strengthens platform trust, transparency, and content management while preserving the existing system architecture.
 
 ---
 
