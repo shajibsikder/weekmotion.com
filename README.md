@@ -4,6 +4,16 @@ This repository serves as the architectural documentation and system design blue
 
 The system is optimized for maintainability and efficient handling of media-heavy workloads, leveraging asynchronous processing and strong database-level consistency.
 
+## 📊 Platform Snapshot
+
+- Founded: 2021
+- Active Users: 200,000+
+- Creator Ecosystem
+- Video Sharing Platform
+- Community Feed System
+- Digital Marketplace
+- Professional Services Platform
+
 ---
 
 ## 🧠 Core System Architecture
@@ -91,6 +101,8 @@ The Weekmotion Feed serves as the central discovery hub for community content, p
 
 This integrates with existing **content paywall & marketplace system**.
 
+---
+
 ## 📜 Content Governance & Trust Layer (NEW)
 
 Weekmotion includes a dedicated content governance framework designed to improve platform transparency, user trust, and content moderation workflows.
@@ -176,6 +188,75 @@ The service platform expands Weekmotion into a complete digital ecosystem by com
 
 ---
 
+## 🚀 Future Platform Roadmap
+
+The following platform capabilities are planned as part of Weekmotion's long-term creator ecosystem expansion strategy.
+
+### 👤 Creator & User Ecosystem
+
+- Creator Profiles
+- Public Creator Pages
+- User Profile Pages
+- Cover Photos & Profile Customization
+- Profile Verification Badges
+- Follow System
+- Subscriber System
+
+### 🔔 Engagement & Retention Layer
+
+- Real-time Notifications
+- Push Notifications
+- Like System
+- Bookmark & Saved Content
+- Personalized Activity Center
+- Creator Alerts & Updates
+
+### 📺 Content Discovery Engine
+
+- Trending Videos
+- Recommended Videos
+- Related Content Recommendations
+- Watch History
+- Continue Watching
+- Recently Viewed Content
+
+### 📊 Creator Studio & Analytics
+
+- Creator Analytics Dashboard
+- Revenue Analytics
+- Audience Insights
+- Subscriber Growth Tracking
+- Content Performance Metrics
+- Creator Studio Management Tools
+
+### 💬 Communication Infrastructure
+
+- Direct Messaging System
+- Creator Inbox
+- Support Ticket Center
+- User-to-Creator Communication Layer
+
+### 🛒 Digital Commerce Expansion
+
+- Digital Downloads
+- License Key Distribution System
+- Premium Resource Marketplace
+- Creator Commerce Tools
+
+### 📱 Platform Infrastructure
+
+- Progressive Web App (PWA)
+- Advanced Search System
+- Push Notification Architecture
+- Performance Optimization Layer
+- Scalable Recommendation Engine
+
+### 🎯 Vision
+
+The long-term vision of Weekmotion is to evolve from a content-sharing platform into a complete creator, learning, commerce, and community ecosystem capable of supporting creators, businesses, educators, and digital entrepreneurs at scale.
+
+---
+
 ## 🏗️ System Data Flow
 
 This diagram represents the high-level request lifecycle, asynchronous processing flow, and storage segmentation layers.
@@ -199,3 +280,4 @@ graph TD
     CoreApp --> RedisCache[(Redis Cache)]
     MySQL --> RedisCache
 ```
+
