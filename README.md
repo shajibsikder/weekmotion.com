@@ -31,7 +31,7 @@ The system is built for maintainability and efficient handling of media-heavy wo
 |---|---|
 | **Founded** | 2021 |
 | **Active Users** | 20,000+ |
-| **Registered Users:** 65,000+ |
+| **Registered Users:** | 65,000+ |
 | **Creator Ecosystem** | ✅ |
 | **Video Sharing Platform** | ✅ |
 | **Community Feed System** | ✅ |
