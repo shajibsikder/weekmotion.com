@@ -1,8 +1,6 @@
 <div align="left">
 
-# 🎬 Weekmotion
-
-### System Architecture & Design Overview
+# Weekmotion: System Architecture & Design Overview
 
 *A scalable video-sharing, content monetization, and creator ecosystem*
 
