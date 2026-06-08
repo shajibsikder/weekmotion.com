@@ -956,9 +956,9 @@ Organized into three delivery stages — reflecting realistic sequencing, not as
 
 ---
 
-### Stage 1 · Next (Near-term)
+### ✅ Recently Shipped / Live
 
-Completing the social and creator experience layer.
+The following social, creator experience, and commerce features have been successfully deployed to production and are now active:
 
 | Feature | Type |
 |---|---|
@@ -971,8 +971,20 @@ Completing the social and creator experience layer.
 | Direct Messaging System | Product |
 | Creator Inbox | Product |
 | Support Ticket Center | Product |
-| Read Replica Query Routing | Engineering |
-| Performance Optimization Pass | Engineering |
+| Progressive Web App (PWA) | Product |
+| Digital Downloads & License Key Distribution | Product |
+| Premium Resource Marketplace | Product |
+
+---
+
+### Stage 1 · Next (Near-term)
+
+Focusing on database scaling, system observability, and core performance enhancements.
+
+| Feature | Type | Notes |
+|---|---|---|
+| Read Replica Query Routing | Engineering | Route analytics and reporting queries to replica |
+| Performance Optimization Pass | Engineering | Query profiling, cache tuning, response time improvements |
 
 ---
 
@@ -984,9 +996,6 @@ Infrastructure upgrades triggered by volume thresholds, not by calendar.
 |---|---|---|
 | Elasticsearch Migration | Engineering | Search index volume or relevance degradation |
 | Mobile Push at Scale | Engineering | Push volume exceeds third-party tier limits |
-| Progressive Web App (PWA) | Product | Mobile session share exceeds threshold |
-| Digital Downloads & License Key Distribution | Product | Marketplace demand |
-| Premium Resource Marketplace | Product | Creator commerce adoption |
 
 ---
 
@@ -1051,10 +1060,16 @@ Capabilities that require significant new infrastructure or research — not nea
 | Service Level Objectives (SLOs) | ✅ Documented | Reliability |
 | Data Retention Policy | ✅ Documented | Compliance |
 | Future Scaling Triggers | ✅ Documented | Reliability |
-| Creator Profiles & Social Features | 🟡 Stage 1 | Product Roadmap |
-| Direct Messaging & Inbox | 🟡 Stage 1 | Product Roadmap |
-| Elasticsearch / PWA | 🔵 Stage 2 | Engineering Roadmap |
+| Creator Profiles & Social Features | ✅ Implemented | Core |
+| Direct Messaging & Inbox | ✅ Implemented | Core |
+| Progressive Web App (PWA) | ✅ Implemented | Core |
+| Digital Downloads & Marketplace | ✅ Implemented | Core |
+| Read Replica Query Routing | 🟡 Stage 1 | Engineering |
+| Performance Optimization Pass | 🟡 Stage 1 | Engineering |
+| Elasticsearch Migration | 🔵 Stage 2 | Engineering |
+| Mobile Push at Scale | 🔵 Stage 2 | Engineering |
 | ML Recommendation | 🔵 Stage 3 | Future Research |
+| CDN Provider Redundancy | 🔵 Stage 3 | Future Research |
 | Microservice Decomposition | 🔵 Stage 3 | Future Research |
 
 ---
