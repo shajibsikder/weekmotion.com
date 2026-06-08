@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 # 🎬 Weekmotion
 
@@ -9,7 +9,7 @@
 ---
 
 [![Founded](https://img.shields.io/badge/Founded-2021-blue?style=flat-square)](#)
-[![Active Users](https://img.shields.io/badge/Active%20Users-200%2C000%2B-success?style=flat-square)](#)
+[![Active Users](https://img.shields.io/badge/Active%20Users-20%2C000%2B-success?style=flat-square)](#)
 [![Architecture](https://img.shields.io/badge/Architecture-Decoupled%20Monolith-orange?style=flat-square)](#)
 [![Backend](https://img.shields.io/badge/Backend-Laravel-red?style=flat-square)](#)
 [![Queue](https://img.shields.io/badge/Queue-Redis-dc382d?style=flat-square)](#)
@@ -32,7 +32,8 @@ The system is built for maintainability and efficient handling of media-heavy wo
 | Attribute | Detail |
 |---|---|
 | **Founded** | 2021 |
-| **Active Users** | 200,000+ |
+| **Active Users** | 20,000+ |
+| **Registered Users:** 65,000+ |
 | **Creator Ecosystem** | ✅ |
 | **Video Sharing Platform** | ✅ |
 | **Community Feed System** | ✅ |
